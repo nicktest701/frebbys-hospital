@@ -20,10 +20,15 @@ html {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Open Sans", Montserrat, "Lucida Sans", sans-serif;
   font-size: 15px;
   font-weight: 500;
   background-color: $white-color;
+  color: $black-color;
 }
 main {
   position: relative;
@@ -349,7 +354,7 @@ h2::before {
         font-size: 3vw;
       }
       & :nth-child(3) {
-        font-size: 1.7vw;
+        font-size: 2.7vw;
       }
 
       p {
