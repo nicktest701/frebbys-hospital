@@ -106,6 +106,8 @@ h2::before {
 
 .top-bar-container .content {
   gap: 2em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .top-bar-container .info-container {
@@ -118,6 +120,8 @@ h2::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 1em;
 }
 
@@ -156,7 +160,14 @@ h2::before {
   padding: 1em 0;
 }
 
-.nav .logo-container {
+.nav .content {
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2em;
+}
+
+.nav .content .logo-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,16 +179,18 @@ h2::before {
           justify-content: center;
 }
 
-.nav .logo-container p {
+.nav .content .logo-container p {
   font-size: 2em;
   font-weight: bold;
   color: #0746a7;
 }
 
-.nav .nav-bar {
+.nav .content .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -187,11 +200,11 @@ h2::before {
   gap: 1.5em;
 }
 
-.nav .nav-bar a {
+.nav .content .nav-bar a {
   color: #011230;
 }
 
-.nav .nav-bar .nav-item:last-child {
+.nav .content .nav-bar .nav-item:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -203,15 +216,93 @@ h2::before {
   border: 1px solid #626969;
 }
 
-.nav .nav-bar .nav-item:last-child .search {
+.nav .content .nav-bar .nav-item:last-child .search {
   outline: none;
   border: 0;
   border-radius: 0;
   padding: 0.7em 1em;
 }
 
-.nav .menu {
+.nav .content .overlay,
+.nav .content .menu,
+.nav .content .nav-bar-2 {
   display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767.98px) {
+  .nav .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .nav .content .nav-bar {
+    display: none;
+  }
+  .nav .content .overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 200vh;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-transition: display 0.8s linear ease-in-out;
+    transition: display 0.8s linear ease-in-out;
+  }
+  .nav .content .overlay.close {
+    display: block;
+  }
+  .nav .content .nav-bar-2 {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 50%;
+    z-index: 1000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1em;
+    height: 200vh;
+    background: #fff;
+    -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  .nav .content .nav-bar-2 .logo-container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  .nav .content .nav-bar-2 li > input {
+    margin-bottom: 3em;
+  }
+  .nav .content .nav-bar-2 .nav-item {
+    width: 100%;
+  }
+  .nav .content .nav-bar-2 .nav-item a {
+    display: block;
+    padding: 1em;
+    color: #0746a7;
+  }
+  .nav .content .nav-bar-2 .nav-item a:hover {
+    background: #0746a7;
+    color: #fff;
+  }
+  .nav .content .menu {
+    display: block;
+  }
 }
 
 .jumbotron-container {
@@ -656,22 +747,24 @@ h2::before {
 }
 
 .expertise-container .video-button-container ul {
-  width: 80%;
-  margin-inline: auto;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1em;
 }
 
 .expertise-container .video-button-container ul li {
-  padding: 1.3em 1.5em;
   color: #0746a7;
+  padding: 0.5em 1em;
 }
 
 .expertise-container .video-button-container ul li:hover {
@@ -708,7 +801,7 @@ h2::before {
 }
 
 .doctors-container .content .doctors .card {
-  width: 300x;
+  width: 270px;
   border-radius: 5px;
   -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
