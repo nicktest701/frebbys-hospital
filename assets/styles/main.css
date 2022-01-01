@@ -12,19 +12,6 @@ html {
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   font-family: "Open Sans", Montserrat, "Lucida Sans", sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -422,7 +409,7 @@ h2::before {
 }
 
 .jumbotron-container .jumbotron-info-container {
-  width: 80%;
+  width: 100%;
   margin-inline: auto;
   position: absolute;
   bottom: -7vh;
@@ -456,7 +443,7 @@ h2::before {
 }
 
 .jumbotron-container .jumbotron-info-container .info :nth-child(3) {
-  font-size: 2.7vw;
+  font-size: 14px;
 }
 
 .jumbotron-container .jumbotron-info-container .info p {
@@ -470,6 +457,9 @@ h2::before {
   }
   .jumbotron-container .jumbotron-info-container .info img {
     width: 60%;
+  }
+  .jumbotron-container .jumbotron-info-container .info :nth-child(3) {
+    font-size: 13px;
   }
 }
 

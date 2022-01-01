@@ -20,10 +20,6 @@ html {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   font-family: "Open Sans", Montserrat, "Lucida Sans", sans-serif;
   font-size: 15px;
   font-weight: 500;
@@ -330,7 +326,7 @@ h2::before {
   }
 
   .jumbotron-info-container {
-    width: 80%;
+    width: 100%;
     margin-inline: auto;
     position: absolute;
     bottom: -7vh;
@@ -354,7 +350,7 @@ h2::before {
         font-size: 3vw;
       }
       & :nth-child(3) {
-        font-size: 2.7vw;
+        font-size: 14px;
       }
 
       p {
@@ -369,6 +365,9 @@ h2::before {
       .info {
         img {
           width: 60%;
+        }
+        & :nth-child(3) {
+          font-size: 13px;
         }
       }
     }
